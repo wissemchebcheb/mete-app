@@ -7,14 +7,14 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #f1f1f1;
-    background: linear-gradient(45deg, rgb(107, 24, 100), rgb(13, 8, 92));
+    background: linear-gradient(45deg, rgb(251 251 251), rgb(0 3 96));
     height: 100vh;
 }
 
 .container{
     width:800px;
     height:600px;
-    background: linear-gradient(to right,rgb(225 199 222), rgb(83 93 131 / 22%));
+    background: linear-gradient(to right,rgb(202 223 233), rgb(0 3 96 / 25%));
     display:grid;
     grid-template: 100px 300px 100px 100px/ repeat(8,100px); /* 600px divisé sur 4 ligne*/
     margin:100px auto 0;
