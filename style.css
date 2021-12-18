@@ -103,7 +103,26 @@ h1{
 }
 
 
+#load {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(45deg, rgb(251 251 251), rgb(0 3 96));
+    transition: opacity 1.1s ease-in-out;
+  }
+#load img{
+    position: absolute;
+    width:150px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
 
+
+.disparition{
+    opacity: 0 !important;
+}
 
 
 

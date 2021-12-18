@@ -1,3 +1,5 @@
+import tabJourEnOrdre from "./utilitaire/gestion_temps.js";
+
 const CLEAPI= "1bc025f55508e0b3ac098939dff896a6";
 let resultatApi;
 const temps=document.querySelector(".temps");
@@ -8,6 +10,7 @@ const valeur=document.querySelectorAll(".heure-prevision-valeur");
 const nomjour=document.querySelectorAll(".jour-prevision-nom");
 const tempjour=document.querySelectorAll(".jour-prevision-temps");
 const logo=document.querySelector(".logo-meteo");
+const chargement=document.querySelector("#load");
 
 if (navigator.geolocation){
     navigator.geolocation.getCurrentPosition((pos)=>{
@@ -59,9 +62,31 @@ function appelAPI(long,lat){
            valeur[i].innerText=`${Math.trunc(resultatApi.hourly[i*3].temp)}°`
             
         }
+
+        for (let j = 0; j < tabJourEnOrdre.length; j++) {
+    
+            nomjour[j].innerText=tabJourEnOrdre[j].slice(0,3);
+        }
+        
+        for (let y = 0; y < 7; y++) {  
+            tempjour[y].innerText=`${Math.trunc(resultatApi?.daily[y+1].temp.day)}°`;
+            
+        }
+
+        chargement.classList.add("disparition");
+
+        //logo
+        if (heureactuel>= 6 && heureactuel<21){
+            logo.src=`ressources/nuit/${resultatApi.current.weather[0].icon}.svg`
+
+        }else{
+            logo.src=`ressources/nuit/${resultatApi.current.weather[0].icon}.svg`
+    }
+    
     })
 
-    
+   
 
 }
+
 
